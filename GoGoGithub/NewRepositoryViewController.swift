@@ -51,7 +51,7 @@ class NewRepositoryViewController: UIViewController, UITextFieldDelegate {
     
     
    //MARK: Post Request
-    func repoPostRequest(name: String, description: String?) {
+    func repoPostRequest(name: String, description: String?, completion: (error: String?) -> () ) {
         
         do {
             let token = try MBGithubOAuth.shared.accessToken()
@@ -67,67 +67,46 @@ class NewRepositoryViewController: UIViewController, UITextFieldDelegate {
             request.HTTPMethod = "POST"
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             request.setValue("application/json", forHTTPHeaderField: "Accept")
+            
             NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
-                if let error = error {
-                    print(error)
-                }
-                if let data = data {
-                    let request = try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers)
-                    
-                    
+                
+                print(response)
+                
+                guard let response = response else {return completion(error: "No response.")}
+                guard let httpResponse = response as? NSHTTPURLResponse else { return completion(error: "Failed to upcast to NSHTTPURLResponse.")}
+                
+                if httpResponse.statusCode == 201 {
+                    completion(error: nil)
                 }
                 
             }).resume()
-        }catch{}
+        }catch let error {
+            completion(error: "Error getting a token. \(error)")
+        }
         
 
     }
     
     //MARK: Navigation
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        
-//        if createButton == sender {
-//            let name = repositoryNameTextField.text ?? ""
-//            let description = repositoryDescriptionTextField.text ?? ""
-//        }
-//       
-//    }
     
     //MARK: Actions
     @IBAction func cancel(sender: UIBarButtonItem) {
         dismissViewControllerAnimated(true, completion: nil)
 
     }
+    
     @IBAction func repoPostRequestButtonPressed(sender: AnyObject) {
-       
-        
-        repoPostRequest(repoNameTextField.text!, description: repoDescriptionTextField.text)
-        
-//        let alertController = UIAlertController(
-//            title: "Success",
-//            message: "We've create a new repo on github for you",
-//            preferredStyle: UIAlertControllerStyle.Alert
-//        )
-//        
-//        
-//        let confirmAction = UIAlertAction(
-//            title: "OK", style: UIAlertActionStyle.Default) { (action) in
-//                // ...
-//        }
-//        
-//        alertController.addAction(confirmAction)
-//        
-//        presentViewController(alertController, animated: true, completion: nil)
-//    }
-//        @IBAction func unwindToHomeViewController(sender: UIStoryboardSegue) {
-//        
-//            if let sourceViewController = sender.sourceViewController as? HomeViewController, repoNameTextField.text = !text.isEmpty {
-//                
-//            }
-//        }
-//        
+                repoPostRequest(repoNameTextField.text!, description: repoDescriptionTextField.text ) { (error) -> () in
+                    
+                    if error == nil {
+                    self.dismissViewControllerAnimated(true, completion: nil)
+            
+                    }
+            }
         }
 }
+
+
 
 
 

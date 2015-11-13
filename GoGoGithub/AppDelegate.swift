@@ -47,8 +47,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func presentOAuthViewController() {
-        if let homeViewController = self.window?.rootViewController as? HomeViewController, storyboard = homeViewController.storyboard {
+        
+        if let navigationController = self.window?.rootViewController as? UINavigationController, storyboard = navigationController.storyboard, homeViewController = navigationController.viewControllers.first as? HomeViewController {
+            
             if let oauthViewController = storyboard.instantiateViewControllerWithIdentifier(OAuthViewController.identifier()) as? OAuthViewController {
+                
                 homeViewController.addChildViewController(oauthViewController)
                 homeViewController.view.addSubview(oauthViewController.view)
                 oauthViewController.didMoveToParentViewController(homeViewController)
@@ -67,6 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 // We need a pointer to our OAuthViewController for application:sourceApplication:annotation:
                 self.oauthViewController = oauthViewController
             }
+            
         }
         
     }

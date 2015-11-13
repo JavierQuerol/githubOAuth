@@ -20,8 +20,6 @@ class HomeViewController: UIViewController, UITableViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.update()
-//        self.newRepoPostRequest ()
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,12 +30,12 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         super.viewDidAppear(animated)
     }
     
-    //MARK: POST request
-
-//    func newRepoPostRequest {
-//    }
     
-    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.update()
+        
+    }
     
     //MARK: GET request
     func update() {
