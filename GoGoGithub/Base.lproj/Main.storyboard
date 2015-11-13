@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dx8-sJ-oKC">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--New Repo-->
@@ -16,27 +17,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Give you repo a name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EeS-Yr-IkQ">
-                                <rect key="frame" x="60" y="124" width="480" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="qph-wF-AHQ">
+                                <rect key="frame" x="20" y="104" width="560" height="143"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3u-xV-zyi">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Give your repo a name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EeS-Yr-IkQ">
+                                        <rect key="frame" x="0.0" y="35" width="560" height="30"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FHy-K6-dM4">
+                                        <rect key="frame" x="0.0" y="79" width="93" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write a brief description" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fYm-7o-mar">
+                                        <rect key="frame" x="0.0" y="113" width="560" height="30"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="SSa-2A-vxq"/>
-                                    <constraint firstAttribute="width" constant="309" id="yNI-CU-Ypf"/>
+                                    <constraint firstItem="fYm-7o-mar" firstAttribute="leading" secondItem="qph-wF-AHQ" secondAttribute="leadingMargin" id="7BB-uR-eLf"/>
+                                    <constraint firstItem="fYm-7o-mar" firstAttribute="trailing" secondItem="qph-wF-AHQ" secondAttribute="trailingMargin" id="913-F3-Fe3"/>
+                                    <constraint firstItem="EeS-Yr-IkQ" firstAttribute="leading" secondItem="qph-wF-AHQ" secondAttribute="leading" id="Cn5-hT-Lbe"/>
+                                    <constraint firstAttribute="trailing" secondItem="EeS-Yr-IkQ" secondAttribute="trailing" id="bug-vP-fHy"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            </stackView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.9966771002" green="1" blue="0.45937439079999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="EeS-Yr-IkQ" firstAttribute="leading" secondItem="o3h-df-Mol" secondAttribute="leading" constant="60" id="5bL-vC-2Cz"/>
-                            <constraint firstAttribute="trailing" secondItem="EeS-Yr-IkQ" secondAttribute="trailing" constant="60" id="OW3-yt-eFn"/>
-                            <constraint firstItem="EeS-Yr-IkQ" firstAttribute="top" secondItem="pjb-Tr-uYB" secondAttribute="bottom" constant="60" id="m77-4j-UkZ"/>
+                            <constraint firstItem="qph-wF-AHQ" firstAttribute="top" secondItem="pjb-Tr-uYB" secondAttribute="bottom" constant="40" id="O0s-c3-wDs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qph-wF-AHQ" secondAttribute="trailing" id="YSk-Md-tvd"/>
+                            <constraint firstItem="qph-wF-AHQ" firstAttribute="leading" secondItem="o3h-df-Mol" secondAttribute="leadingMargin" id="jA1-iy-ooX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Repo" id="Uo6-av-efY">
-                        <barButtonItem key="rightBarButtonItem" title="Create" id="Ask-x0-Cht">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="iY6-mm-zwF">
+                            <connections>
+                                <action selector="cancel:" destination="8UV-Fc-DX9" id="smg-8v-CrC"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Ask-x0-Cht">
                             <connections>
                                 <action selector="repoPostRequestButtonPressed:" destination="8UV-Fc-DX9" id="MxF-2k-HcT"/>
                             </connections>
@@ -44,12 +78,32 @@
                     </navigationItem>
                     <connections>
                         <outlet property="createButton" destination="Ask-x0-Cht" id="8LA-Rs-k9A"/>
-                        <outlet property="repositoryNameTextField" destination="EeS-Yr-IkQ" id="QGD-k4-hz4"/>
+                        <outlet property="repoDescriptionTextField" destination="fYm-7o-mar" id="k1V-9m-dty"/>
+                        <outlet property="repoNameTextField" destination="EeS-Yr-IkQ" id="SAT-C3-t7q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bL4-GP-EXB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1812" y="-190"/>
+            <point key="canvasLocation" x="2604" y="-200"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="rMK-1m-Gu7">
+            <objects>
+                <viewController id="Dgh-q5-Ai5" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ijc-rf-pap"/>
+                        <viewControllerLayoutGuide type="bottom" id="wRP-5c-fHv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sg6-vS-UWW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mXq-3a-hAo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3282" y="-183"/>
         </scene>
         <!--Repositories-->
         <scene sceneID="tne-QT-ifu">
@@ -119,7 +173,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="MSJ-33-0ch">
                             <connections>
                                 <action selector="newRepoPostRequestButtonPressed:" destination="BYZ-38-t0r" id="LEI-wC-73F"/>
-                                <segue destination="8UV-Fc-DX9" kind="show" id="44e-ng-x5f"/>
+                                <segue destination="UYa-8b-pBd" kind="presentation" identifier="AddRepo" id="44e-ng-x5f"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -243,6 +297,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xqw-AQ-XmN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="870" y="547"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wRO-fQ-wWu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UYa-8b-pBd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ucC-Q5-WQR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8UV-Fc-DX9" kind="relationship" relationship="rootViewController" id="D9U-4W-Wb8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nIn-cX-SRO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1792" y="-200"/>
         </scene>
     </scenes>
     <resources>

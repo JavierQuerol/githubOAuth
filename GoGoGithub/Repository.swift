@@ -10,10 +10,18 @@ import Foundation
 
 class Repository {
     
+    // MARK: Types
+
     let name: String
     let id: Int
     
+    // MARK: Initialization
+
     init(name: String, id: Int) {
         self.name = name
-        self.id = id    }
+        self.id = id
+  
+    }
 }
+
+
