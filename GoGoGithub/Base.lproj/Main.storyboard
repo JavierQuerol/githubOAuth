@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dx8-sJ-oKC">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <scenes>
+        <!--New Repo-->
+        <scene sceneID="KCX-yq-xWS">
+            <objects>
+                <viewController id="8UV-Fc-DX9" customClass="NewRepositoryViewController" customModule="GoGoGithub" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pjb-Tr-uYB"/>
+                        <viewControllerLayoutGuide type="bottom" id="wU0-1I-aNl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="o3h-df-Mol">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Give you repo a name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EeS-Yr-IkQ">
+                                <rect key="frame" x="60" y="124" width="480" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="SSa-2A-vxq"/>
+                                    <constraint firstAttribute="width" constant="309" id="yNI-CU-Ypf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.9966771002" green="1" blue="0.45937439079999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="EeS-Yr-IkQ" firstAttribute="leading" secondItem="o3h-df-Mol" secondAttribute="leading" constant="60" id="5bL-vC-2Cz"/>
+                            <constraint firstAttribute="trailing" secondItem="EeS-Yr-IkQ" secondAttribute="trailing" constant="60" id="OW3-yt-eFn"/>
+                            <constraint firstItem="EeS-Yr-IkQ" firstAttribute="top" secondItem="pjb-Tr-uYB" secondAttribute="bottom" constant="60" id="m77-4j-UkZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Repo" id="Uo6-av-efY">
+                        <barButtonItem key="rightBarButtonItem" title="Create" id="Ask-x0-Cht">
+                            <connections>
+                                <action selector="repoPostRequestButtonPressed:" destination="8UV-Fc-DX9" id="MxF-2k-HcT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="createButton" destination="Ask-x0-Cht" id="8LA-Rs-k9A"/>
+                        <outlet property="repositoryNameTextField" destination="EeS-Yr-IkQ" id="QGD-k4-hz4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bL4-GP-EXB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1812" y="-190"/>
+        </scene>
+        <!--Repositories-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" id="BYZ-38-t0r" customClass="HomeViewController" customModule="GoGoGithub" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OFx-kx-XlS">
+                                <rect key="frame" x="0.0" y="1" width="600" height="572"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" placeholder="search for a repository" id="uya-k6-i9c">
+                                    <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <animations/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="9sO-0n-KIX" style="IBUITableViewCellStyleDefault" id="FIX-nU-RGe">
+                                        <rect key="frame" x="0.0" y="136" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FIX-nU-RGe" id="Ofg-mr-G5d">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9sO-0n-KIX">
+                                                    <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="06P-lt-tcc"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="5J3-qU-rHf"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OFx-kx-XlS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="F70-UF-cWh"/>
+                            <constraint firstAttribute="trailing" secondItem="OFx-kx-XlS" secondAttribute="trailing" id="RJ7-aM-AJ7"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="OFx-kx-XlS" secondAttribute="bottom" constant="27" id="ZEj-98-Hl5"/>
+                            <constraint firstItem="OFx-kx-XlS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-63" id="ie9-JS-0Xl"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Repositories" id="be6-Zr-yTy">
+                        <barButtonItem key="leftBarButtonItem" title="Profile" id="fdK-ak-SWb">
+                            <connections>
+                                <segue destination="IIq-pF-YBG" kind="show" id="1jh-gm-W7V"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="MSJ-33-0ch">
+                            <connections>
+                                <action selector="newRepoPostRequestButtonPressed:" destination="BYZ-38-t0r" id="LEI-wC-73F"/>
+                                <segue destination="8UV-Fc-DX9" kind="show" id="44e-ng-x5f"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="OFx-kx-XlS" id="hAx-IS-dAN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1644" y="547"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="OBK-JY-xaI">
+            <objects>
+                <viewController id="IIq-pF-YBG" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uh8-Bc-kNE"/>
+                        <viewControllerLayoutGuide type="bottom" id="64f-u2-36l"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yjT-xc-iTj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" red="0.0" green="1" blue="0.64627239162056327" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Profile" id="wU0-h4-JKP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YeV-BH-MVY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1730" y="1301"/>
+        </scene>
+        <!--Auth View Controller-->
+        <scene sceneID="A1l-CZ-ysK">
+            <objects>
+                <viewController storyboardIdentifier="OAuthViewController" id="ZYO-hC-dbN" customClass="OAuthViewController" customModule="GoGoGithub" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OeF-N4-EMc"/>
+                        <viewControllerLayoutGuide type="bottom" id="wer-Q9-Qsf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hun-Mq-qUp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="github-logo" translatesAutoresizingMaskIntoConstraints="NO" id="3Tv-zl-YD0">
+                                <rect key="frame" x="180" y="225" width="240" height="150"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Qa7-4Y-uA0"/>
+                                    <constraint firstAttribute="height" constant="150" id="y6c-CT-M5y"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GYX-Od-04T">
+                                <rect key="frame" x="181" y="359" width="240" height="241"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jwt-6e-k7d">
+                                        <rect key="frame" x="8" y="101" width="224" height="40"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.61568627450980395" green="0.85882352941176465" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="NhC-Pq-cNl"/>
+                                        </constraints>
+                                        <state key="normal" title="LOGIN">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="loginButtonSelected:" destination="ZYO-hC-dbN" eventType="touchUpInside" id="0v5-2R-u5g"/>
+                                        </connections>
+                                    </button>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="Nrc-qa-utc">
+                                        <rect key="frame" x="204" y="111" width="20" height="20"/>
+                                        <animations/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Jwt-6e-k7d" firstAttribute="centerX" secondItem="GYX-Od-04T" secondAttribute="centerX" id="7H8-b5-XuS"/>
+                                    <constraint firstAttribute="trailing" secondItem="Nrc-qa-utc" secondAttribute="trailing" constant="16" id="ArF-B8-U0y"/>
+                                    <constraint firstAttribute="trailing" secondItem="Jwt-6e-k7d" secondAttribute="trailing" constant="8" id="BKu-eT-8Em"/>
+                                    <constraint firstItem="Nrc-qa-utc" firstAttribute="centerY" secondItem="Jwt-6e-k7d" secondAttribute="centerY" id="Mu7-r9-yiD"/>
+                                    <constraint firstItem="Jwt-6e-k7d" firstAttribute="leading" secondItem="GYX-Od-04T" secondAttribute="leading" constant="8" id="OsE-zt-dtB"/>
+                                    <constraint firstItem="Jwt-6e-k7d" firstAttribute="centerY" secondItem="GYX-Od-04T" secondAttribute="centerY" id="ntM-Xl-0P2"/>
+                                    <constraint firstAttribute="width" constant="240" id="wjE-yx-fhC"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GYX-Od-04T" firstAttribute="centerX" secondItem="3Tv-zl-YD0" secondAttribute="centerX" id="SuY-dr-G4C"/>
+                            <constraint firstItem="GYX-Od-04T" firstAttribute="top" secondItem="3Tv-zl-YD0" secondAttribute="bottom" constant="-16" id="iQh-KX-OdO"/>
+                            <constraint firstItem="3Tv-zl-YD0" firstAttribute="centerY" secondItem="hun-Mq-qUp" secondAttribute="centerY" id="ru2-Nw-ByW"/>
+                            <constraint firstItem="3Tv-zl-YD0" firstAttribute="centerX" secondItem="hun-Mq-qUp" secondAttribute="centerX" id="vQU-Gd-5C0"/>
+                            <constraint firstItem="wer-Q9-Qsf" firstAttribute="top" secondItem="GYX-Od-04T" secondAttribute="bottom" id="wM6-zY-K1H"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicatorView" destination="Nrc-qa-utc" id="MP7-eP-3Wi"/>
+                        <outlet property="loginButton" destination="Jwt-6e-k7d" id="4ZB-C7-d3l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PvG-8l-5xe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2338" y="552"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lhd-Vq-d2r">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dx8-sJ-oKC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="itp-BV-vVe">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="CbC-Au-dlG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xqw-AQ-XmN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="870" y="547"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="github-logo" width="1500" height="1125"/>
+    </resources>
+</document>
