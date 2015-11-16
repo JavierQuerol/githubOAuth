@@ -17,6 +17,7 @@
 		1C6BA3AB1BD9D971002E7A4F /* MBGithubOAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6BA3A71BD9D971002E7A4F /* MBGithubOAuth.swift */; };
 		1C8D77DE1BD9A3B5002F076A /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8D77DD1BD9A3B5002F076A /* Repository.swift */; };
 		1CA672121BD9628C007EE8F8 /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA672111BD9628C007EE8F8 /* OAuthViewController.swift */; };
+		E185F64D1BFA4360004D9EF9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E185F64C1BFA4360004D9EF9 /* ProfileViewController.swift */; };
 		E1DE1F741BF647470001B622 /* NewRepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DE1F731BF647470001B622 /* NewRepositoryViewController.swift */; };
 		E1ED7F771BF64BAA00089AEE /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ED7F761BF64BAA00089AEE /* Owner.swift */; };
 		E1ED7F791BF64BD500089AEE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ED7F781BF64BD500089AEE /* User.swift */; };
@@ -56,6 +57,7 @@
 		1C6BA3A71BD9D971002E7A4F /* MBGithubOAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBGithubOAuth.swift; sourceTree = "<group>"; };
 		1C8D77DD1BD9A3B5002F076A /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		1CA672111BD9628C007EE8F8 /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
+		E185F64C1BFA4360004D9EF9 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E1DE1F731BF647470001B622 /* NewRepositoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewRepositoryViewController.swift; sourceTree = "<group>"; };
 		E1ED7F761BF64BAA00089AEE /* Owner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
 		E1ED7F781BF64BD500089AEE /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				1C0CFCAB1BD8612F007DE7FD /* HomeViewController.swift */,
 				E1DE1F731BF647470001B622 /* NewRepositoryViewController.swift */,
 				1CA672111BD9628C007EE8F8 /* OAuthViewController.swift */,
+				E185F64C1BFA4360004D9EF9 /* ProfileViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				1C0CFCAA1BD8612F007DE7FD /* AppDelegate.swift in Sources */,
 				E1ED7F791BF64BD500089AEE /* User.swift in Sources */,
 				1C6BA3AB1BD9D971002E7A4F /* MBGithubOAuth.swift in Sources */,
+				E185F64D1BFA4360004D9EF9 /* ProfileViewController.swift in Sources */,
 				1C8D77DE1BD9A3B5002F076A /* Repository.swift in Sources */,
 				E1DE1F741BF647470001B622 /* NewRepositoryViewController.swift in Sources */,
 			);
